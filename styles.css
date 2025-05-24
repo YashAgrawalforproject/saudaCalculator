@@ -1,0 +1,21 @@
+body { font-family: Arial, sans-serif; background: #f7f7f7; margin: 0; padding: 20px; }
+.container { background: #fff; max-width: 900px; margin: auto; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+h1,h2,h3 { color: #333; margin-bottom: 10px; }
+table { width: 100%; border-collapse: collapse; margin-bottom: 10px; }
+th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+input[type="number"], input[type="date"] { width: 100%; padding: 5px; box-sizing: border-box; }
+button { background: #007bff; color: #fff; border: none; padding: 8px 12px; margin: 5px 0; border-radius: 4px; cursor: pointer; }
+button:hover { background: #0056b3; }
+tr.invalid td { background: #ffe6e6; }
+.export-buttons { margin-top: 15px; }
+.export-buttons button { margin-right: 10px; }
+
+/* Summary layout */
+.summary-container { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+.summary-block { flex: 1 1 300px; background: #f0f8ff; border: 1px solid #d1eaff; padding: 15px; border-radius: 8px; }
+.summary-block h3 { margin-top: 0; color: #0056b3; }
+.summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.summary-grid div { font-size: 14px; }
+.summary-grid strong { display: block; color: #333; }
+.verdict-positive { color: green; font-weight: bold; }
+.verdict-negative { color: red; font-weight: bold; }

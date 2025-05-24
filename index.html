@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Sauda Remaining Calculator</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>Sauda Remaining Calculator</h1>
+
+    <div class="field-group">
+      <label for="party-name"><strong>Party Name:</strong></label>
+      <input type="text" id="party-name" placeholder="Enter party name"/>
+    </div>
+
+    <!-- Sauda Entries -->
+    <section>
+      <h2>Sauda Entries (Packets)</h2>
+      <table id="sauda-table">
+        <thead>
+          <tr><th>Qty</th><th>Rate</th><th>Date</th><th>Action</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input class="quantity" type="number" step="any"/></td>
+            <td><input class="rate" type="number" step="any"/></td>
+            <td><input class="date" type="date"/></td>
+            <td><button class="remove-row">Remove</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <button id="add-sauda-row">Add Sauda Row</button>
+    </section>
+
+    <!-- Delivery Entries -->
+    <section>
+      <h2>Delivery Entries (Packets)</h2>
+      <table id="returns-table">
+        <thead>
+          <tr><th>Qty</th><th>Rate</th><th>Date</th><th>Action</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input class="quantity" type="number" step="any"/></td>
+            <td><input class="rate" type="number" step="any"/></td>
+            <td><input class="date" type="date"/></td>
+            <td><button class="remove-row">Remove</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <button id="add-returns-row">Add Delivery Row</button>
+    </section>
+
+    <button id="calculate">Calculate</button>
+
+    <!-- Matched & Over-Deliveries Tables -->
+    <section id="results" style="display:none;">
+      <h2>Matched Remaining Contracts</h2>
+      <table id="results-table">
+        <thead>
+          <tr><th>Orig Qty</th><th>Rate</th><th>Contract Date</th><th>Remaining</th><th>Last Delivery</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <h3>Over-Deliveries</h3>
+      <table id="overdeliver-table">
+        <thead><tr><th>Qty</th><th>Rate</th><th>Date</th></tr></thead>
+        <tbody></tbody>
+      </table>
+
+      <div class="export-buttons">
+        <button id="export-full">Export Full Report</button>
+        <button id="export-main">Export Main Analysis</button>
+      </div>
+    </section>
+
+    <!-- Dual Summary -->
+    <section id="summary" style="display:none;">
+      <h2>📊 Summary</h2>
+      <div class="summary-container">
+
+        <!-- 1. Raw Totals -->
+        <div class="summary-block">
+          <h3>1. Sauda bacha hai usse barabar</h3>
+          <div class="summary-grid">
+            <div><strong>Total Sauda Qty:</strong> <span id="raw-total-sauda"></span> pkts</div>
+            <div><strong>Total Delivery Qty:</strong> <span id="raw-total-return"></span> pkts</div>
+            <div><strong>Remaining:</strong> <span id="raw-remaining-simple"></span> pkts</div>
+            <div><strong>Net Position:</strong> <span id="raw-net-qty"></span></div>
+            <div><strong>Rate to Buy/Sell:</strong> ₹<span id="raw-net-rate"></span></div>
+            <div><strong>Net Monetary Impact:</strong> ₹<span id="raw-net-money"></span></div>
+          </div>
+        </div>
+
+        <!-- 2. Over-Deliveries Only -->
+        <div class="summary-block">
+          <h3>2. Koi sauda nahi bacha</h3>
+          <div class="summary-grid">
+            <div><strong>Total Over Qty:</strong> <span id="over-total-qty"></span> pkts</div>
+            <div><strong>Net Position:</strong> <span id="over-net-qty"></span></div>
+            <div><strong>Rate to Buy/Sell:</strong> ₹<span id="over-net-rate"></span></div>
+            <div><strong>Net Monetary Impact:</strong> ₹<span id="over-net-money"></span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
