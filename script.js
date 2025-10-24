@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 1. Raw Totals
     const raw = calculateRaw(sauda, returns);
-    const rawVerdictQty = raw.netQty > 0 ? '→ Sell' : raw.netQty < 0 ? '→ Buy' : '';
+    const rawVerdictQty = raw.netQty > 0 ? '→ Buy' : raw.netQty < 0 ? '→ Sell' : '';
     const rawVerdictMoney = raw.netMoney > 0 ? '→ Profit' : raw.netMoney < 0 ? '→ Loss' : '';
     document.getElementById('raw-total-sauda').textContent      = raw.totalS.toFixed(2);
     document.getElementById('raw-total-return').textContent     = raw.totalR.toFixed(2);
@@ -210,3 +210,4 @@ document.addEventListener('DOMContentLoaded', () => {
     downloadCSV('full_detailed_report.csv', csv);
   };
 });
+
